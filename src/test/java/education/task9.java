@@ -86,7 +86,6 @@ public class task9 {
                 nameList.add(z,nameLocatorList.get(z).getText());
             }
             ArrayList <String> sortNameList=new ArrayList<String>(nameList);
-            System.out.println(nameList);
             Arrays.sort(new ArrayList[]{sortNameList});
             for (int y=0;y<nameList.size();y++){
                 if (!nameList.get(y).equals(sortNameList.get(y))){
