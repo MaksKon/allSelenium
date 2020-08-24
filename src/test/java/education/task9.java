@@ -69,13 +69,36 @@ public class task9 {
                 }
             }
         }
+    }
+    @Test
+    public void task9_2() {
+        driver.get("http://localhost/litecart/admin/?app=geo_zones&doc=geo_zones");
+        List <WebElement> tableLocatorList=driver.findElements(By.xpath("*//tr[@class='row']//a[@title='Edit']"));
+        ArrayList <String> hrefcountrieZoneList= new ArrayList<>();
+        for (int i=0; i<tableLocatorList.size();i++){
+            hrefcountrieZoneList.add(tableLocatorList.get(i).getAttribute("href"));
+        }
+        for (int i=0; i< hrefcountrieZoneList.size();i++){
+            driver.get(hrefcountrieZoneList.get(i));
+            ArrayList <String> nameList=new ArrayList<String>();
+            List<WebElement> nameLocatorList=driver.findElements(By.xpath("*//select[contains (@name, 'zone_code')]//option[@selected='selected']"));
+            for (int z=0;z<nameLocatorList.size();z++){
+                nameList.add(z,nameLocatorList.get(z).getText());
+            }
+            ArrayList <String> sortNameList=new ArrayList<String>(nameList);
+            System.out.println(nameList);
+            Arrays.sort(new ArrayList[]{sortNameList});
+            for (int y=0;y<nameList.size();y++){
+                if (!nameList.get(y).equals(sortNameList.get(y))){
+                    System.out.println("на странице неправильно отсортированы страны, страна "+nameList.get(y)+" а должна быть "+ sortNameList.get(y) );
+                }
+            }
+        }
 
 
 
 
 
-        
-        
 
 
 
