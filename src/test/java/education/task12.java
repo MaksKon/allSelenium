@@ -74,38 +74,12 @@ public class task12 {
         //проверка наличия товара
         Assert.assertTrue(driver.findElements(By.xpath("*//table[@class='dataTable']//a[contains (text(),'Item')]")).size()>0);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-    }
+ }
 
     @After
     public void stop(){
-    //    driver.quit();
-    //    driver=null;
+        driver.quit();
+        driver=null;
     }
 
 
