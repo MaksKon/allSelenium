@@ -47,7 +47,7 @@ public class task14 {
             Set <String> oldPage=driver.getWindowHandles();
 
             hrefList.get(i).click();
-            wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+            wait.until(ExpectedConditions.numberOfWindowsToBe(oldPage.size()+1));
             Set<String> allPage=driver.getWindowHandles();
             allPage.removeAll(oldPage);
             driver.switchTo().window(allPage.iterator().next());
