@@ -57,18 +57,7 @@ public class task17 {
             }
 
         }
-
-
-
-
-
-
-
-
-
-
-
-    @After
+        @After
     public void stop () {
         driver.quit();
         driver=null;
